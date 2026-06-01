@@ -12,8 +12,13 @@ function App() {
     let height =  data.height;
     let weight =  data.weight;
     setBmi(Math.floor(weight/(height*height)));
-    setIsFormVisible(!isFormVisible);
     reset();
+    setIsFormVisible(!isFormVisible);
+    
+  }
+
+  function handleReset(){
+    setIsFormVisible(!isFormVisible);
   }
 
   return (
@@ -29,7 +34,7 @@ function App() {
         </div>
       </form>
       :
-      <Card bmi={bmi} />
+      <Card bmi={bmi} handleReset={handleReset} />
       }
       
     </>
